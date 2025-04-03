@@ -19,6 +19,8 @@ def winSizeSet():
 # Function to resize the window
 def winResize():
     winSizeSet()
+
+    # Put the button in the middle of the window
     winResizeButton.place(
     x = xSize / 2 - 50,  # Adjusted for button width
     y = ySize / 2 - 20   # Adjusted for button height
