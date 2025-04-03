@@ -18,7 +18,7 @@ def winSizeSet():
 
 # Function to resize the window
 def winResize():
-    winSizeSet()
+    xSize, ySize = winSizeSet()
 
     # Put the button in the middle of the window
     winResizeButton.place(
@@ -32,7 +32,7 @@ xSize, ySize = winSizeSet()
 # Create the resize button
 winResizeButton = Button(
     win,
-    text                = "Resize the window",
+    text                = "Click me!",
     highlightbackground = "white",
     fg                  = "red",
     width               = 20,
