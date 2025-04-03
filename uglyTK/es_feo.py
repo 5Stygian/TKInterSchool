@@ -13,6 +13,8 @@ def winSizeSet():
     yStartPos = r.randint(0, 450)
     
     win.geometry(f"{xSize}x{ySize}+{xStartPos}+{yStartPos}")
+    
+    # Log the position to the console
     print(f"\n=========\nWidth = {xSize}\nHeight = {ySize}\nxPos = {xStartPos}\nyPos = {yStartPos}\n=========\n")
     return xSize, ySize
 
@@ -20,14 +22,14 @@ def winSizeSet():
 def winResize():
     xSize, ySize = winSizeSet()
 
-    # Put the button in the middle of the window
+    # Put the button in the middle of the window on reszie
     winResizeButton.place(
     x = xSize / 2 - 50,  # Adjusted for button width
     y = ySize / 2 - 20   # Adjusted for button height
     )
 
 # Set the initial window size
-xSize, ySize = winSizeSet()
+xSize, ySize = winSizeSet()   
 
 # Create the resize button
 winResizeButton = Button(
@@ -46,5 +48,4 @@ winResizeButton.place(
     y = ySize / 2 - 20   # Adjusted for button height
 )
 
-# Start the main loop
 win.mainloop()
