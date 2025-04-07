@@ -43,38 +43,38 @@ class MyButton:
         elif self.correct == False:
             win.config(bg="white")
 
-test = MyButton("test", 450, 350, 10, 3, "wheat", "red", 0, False)
-test.setposFoo()
-testXPos, testYPos = test.xPos, test.yPos
-test = Button(
+button1 = MyButton("button1", 400, 300, 10, 3, "wheat", "red", 0, False)
+button1.setposFoo()
+button1XPos, button1YPos = button1.xPos, button1.yPos
+button1 = Button(
     win,
-    text                = test.text,
-    highlightbackground = test.bg,
-    fg                  = test.fg,
-    width               = test.xDim,
-    height              = test.yDim,
-    command             = test.foo
+    text                = button1.text,
+    highlightbackground = button1.bg,
+    fg                  = button1.fg,
+    width               = button1.xDim,
+    height              = button1.yDim,
+    command             = button1.foo
 )
-test.place(
-    x = testXPos,
-    y = testYPos
+button1.place(
+    x = button1XPos,
+    y = button1YPos
 )
 
-test2 = MyButton("test2", 450, 350, 10, 3, "wheat", "red", 1, True)
-test2.setposFoo()
-test2XPos, test2YPos = test2.xPos, test2.yPos 
-test2 = Button(
+button2 = MyButton("button2", 400, 300, 10, 3, "wheat", "red", 1, True)
+button2.setposFoo()
+button2XPos, button2YPos = button2.xPos, button2.yPos 
+button2 = Button(
     win,
-    text                = test2.text,
-    highlightbackground = test2.bg,
-    fg                  = test2.fg,
-    width               = test2.xDim,
-    height              = test2.yDim,
-    command             = test2.foo
+    text                = button2.text,
+    highlightbackground = button2.bg,
+    fg                  = button2.fg,
+    width               = button2.xDim,
+    height              = button2.yDim,
+    command             = button2.foo
 )
-test2.place(
-    x = test2XPos,
-    y = test2YPos
+button2.place(
+    x = button2XPos,
+    y = button2YPos
 )
 
 win.mainloop()
