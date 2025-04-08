@@ -35,45 +35,49 @@ class MyButton:
             self.xPos -= 100
         elif self.setpos == 1:
             self.xPos += 100
+        else:
+            pass
 
     def foo(self):
         if self.correct == True:
             win.config(bg="black")
         elif self.correct == False:
             win.config(bg="white")
+        else:
+            pass
 
-button1 = MyButton("button1", 400, 300, 10, 3, "wheat", "red", 0, False)
-button1.setposFoo()
-button1XPos, button1YPos = button1.xPos, button1.yPos
+myButton1 = MyButton("button1", 400, 300, 10, 3, "wheat", "red", 0, False)
+myButton1.setposFoo()
+
 button1 = Button(
     win,
-    text                = button1.text,
-    highlightbackground = button1.bg,
-    fg                  = button1.fg,
-    width               = button1.xDim,
-    height              = button1.yDim,
-    command             = button1.foo
+    text                = myButton1.text,
+    highlightbackground = myButton1.bg,
+    fg                  = myButton1.fg,
+    width               = myButton1.xDim,
+    height              = myButton1.yDim,
+    command             = myButton1.foo
 )
 button1.place(
-    x = button1XPos,
-    y = button1YPos
+    x = myButton1.xPos,
+    y = myButton1.yPos
 )
 
-button2 = MyButton("button2", 400, 300, 10, 3, "wheat", "red", 1, True)
-button2.setposFoo()
-button2XPos, button2YPos = button2.xPos, button2.yPos 
+myButton2 = MyButton("button2", 400, 300, 10, 3, "wheat", "red", 1, True)
+myButton2.setposFoo()
+
 button2 = Button(
     win,
-    text                = button2.text,
-    highlightbackground = button2.bg,
-    fg                  = button2.fg,
-    width               = button2.xDim,
-    height              = button2.yDim,
-    command             = button2.foo
+    text                = myButton2.text,
+    highlightbackground = myButton2.bg,
+    fg                  = myButton2.fg,
+    width               = myButton2.xDim,
+    height              = myButton2.yDim,
+    command             = myButton2.foo
 )
 button2.place(
-    x = button2XPos,
-    y = button2YPos
+    x = myButton2.xPos,
+    y = myButton2.yPos
 )
 
 win.mainloop()
