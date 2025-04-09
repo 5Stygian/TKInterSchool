@@ -17,20 +17,28 @@ image5 = ImageTk.PhotoImage(Image.open("gameshow/latex/q5.png"))
 
 def main():
     global score, question
-    question = 1
+    question = 0
     user_input = entry.get().lower().strip()
+
+    # Increment question number
+    question += 1
 
     # Check answers based on the current question
     if question == 1 and user_input == "3":
         score += 1
+        scoreLabel.config(text = f"Score: {score}")
     elif question == 2 and user_input == "[-7,-4]":
         score += 1
-    elif question == 3 and user_input == "pass":
+        scoreLabel.config(text = f"Score: {score}")
+    elif question == 3 and user_input == "26":
         score += 1
+        scoreLabel.config(text = f"Score: {score}")
     elif question == 4 and user_input == "5x^4 + -4x^-3":
         score += 1
+        scoreLabel.config(text = f"Score: {score}")
     elif question == 5 and user_input == "false":
         score += 1
+        scoreLabel.config(text = f"Score: {score}")
 
     # Update the display based on the current question
     if question == 1:
@@ -59,9 +67,18 @@ def main():
     elif question > 5:
         q5.place_forget()
         im5.place_forget()
+        scoreLabel.place_forget()
+        entry.place_forget()
+        button.place_forget()
 
-    # Increment question number
-    question += 1
+        if score == 5:
+            win.config(bg="#3aba5c")
+            winLabel.place(x = 400, y = 300)
+        else:
+            win.config(bg="#c72e33")
+            lossLabel.place(x = 400, y = 300)
+            scoreLabel.place(x = 400, y = 250)
+            restart.place(x = 400, y = 350)
 
     entry.delete(0, END)  # Clear the entry after retrieving input
 
@@ -87,7 +104,7 @@ q2 = Label(
     font = ("Arial", 24, "bold")
 )
 q3 = Label(
-    text = "Question 3",
+    text = "Question 3 ([x,y])",
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
@@ -99,7 +116,7 @@ q4 = Label(
     font = ("Arial", 24, "bold")
 )
 q5 = Label(
-    text = "Question 5",
+    text = "Question 5 (True/False)",
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
@@ -122,6 +139,20 @@ scoreLabel.place(
     y = 20
 )
 
+winLabel = Label(
+    text = "You got 5/5!",
+    fg   = "black",
+    bg   = "white",
+    font = ("Arial", 24, "bold")
+)
+
+lossLabel = Label(
+    text = "You loose :(",
+    fg   = "black",
+    bg   = "white",
+    font = ("Arial", 24, "bold")
+)
+
 button = Button(
     win, 
     text    = "check answer", 
@@ -130,6 +161,16 @@ button = Button(
 button.place(
     x = 400,
     y = 300
+)
+
+restart = Button(
+    win, 
+    text    = "Restart",
+    bg      = "wheat",
+    fg      = "red", 
+    width   = 5,
+    height  = 2,
+    command = main
 )
 
 main()
