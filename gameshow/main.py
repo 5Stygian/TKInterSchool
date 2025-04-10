@@ -17,28 +17,39 @@ image5 = ImageTk.PhotoImage(Image.open("gameshow/latex/q5.png"))
 
 def main():
     global score, question
-    question = 0
+    question = 1
     user_input = entry.get().lower().strip()
 
     # Increment question number
-    question += 1
+    #question += 1
 
     # Check answers based on the current question
-    if question == 1 and user_input == "3":
-        score += 1
-        scoreLabel.config(text = f"Score: {score}")
-    elif question == 2 and user_input == "[-7,-4]":
-        score += 1
-        scoreLabel.config(text = f"Score: {score}")
-    elif question == 3 and user_input == "26":
-        score += 1
-        scoreLabel.config(text = f"Score: {score}")
-    elif question == 4 and user_input == "5x^4 + -4x^-3":
-        score += 1
-        scoreLabel.config(text = f"Score: {score}")
-    elif question == 5 and user_input == "false":
-        score += 1
-        scoreLabel.config(text = f"Score: {score}")
+    match question:
+        case 1:
+            if user_input == "3":
+                score += 1
+                question += 1
+                scoreLabel.config(text = f"Score: {score}")
+        case 2:
+            if user_input == "[-7,-4]":
+                score += 1
+                question += 1
+                scoreLabel.config(text = f"Score: {score}")
+        case 3:
+            if user_input == "26":
+                score += 1
+                question += 1
+                scoreLabel.config(text = f"Score: {score}")
+        case 4:
+            if user_input == "5x^4 + -4x^-3":
+                score += 1
+                question += 1
+                scoreLabel.config(text = f"Score: {score}")
+        case 5:
+            if user_input == "false":
+                score += 1
+                question += 1
+                scoreLabel.config(text = f"Score: {score}")
 
     # Update the display based on the current question
     if question == 1:
@@ -98,13 +109,13 @@ q1 = Label(
     font = ("Arial", 24, "bold")
 )
 q2 = Label(
-    text = "Question 2",
+    text = "Question 2 ([x,y])",
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
 )
 q3 = Label(
-    text = "Question 3 ([x,y])",
+    text = "Question 3",
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
