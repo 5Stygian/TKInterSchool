@@ -15,6 +15,22 @@ image3 = ImageTk.PhotoImage(Image.open("gameshow/latex/q3.png"))
 image4 = ImageTk.PhotoImage(Image.open("gameshow/latex/q4.png"))
 image5 = ImageTk.PhotoImage(Image.open("gameshow/latex/q5.png"))
 
+questionTitle = [
+    "Question 1",
+    "Question 2 ([x,y])",
+    "Question 3",
+    "Question 4 (power rule)",
+    "Question 5 (True/False)"
+]
+
+answers = [
+    "3",
+    "[-7,-4]",
+    "26",
+    "5x^4 + -4x^-3",
+    "false"
+]
+
 def main():
     global score, question
     question = 1
@@ -26,27 +42,27 @@ def main():
     # Check answers based on the current question
     match question:
         case 1:
-            if user_input == "3":
+            if user_input == answers[0]:
                 score += 1
                 question += 1
                 scoreLabel.config(text = f"Score: {score}")
         case 2:
-            if user_input == "[-7,-4]":
+            if user_input == answers[1]:
                 score += 1
                 question += 1
                 scoreLabel.config(text = f"Score: {score}")
         case 3:
-            if user_input == "26":
+            if user_input == answers[2]:
                 score += 1
                 question += 1
                 scoreLabel.config(text = f"Score: {score}")
         case 4:
-            if user_input == "5x^4 + -4x^-3":
+            if user_input == answers[3]:
                 score += 1
                 question += 1
                 scoreLabel.config(text = f"Score: {score}")
         case 5:
-            if user_input == "false":
+            if user_input == answers[4]:
                 score += 1
                 question += 1
                 scoreLabel.config(text = f"Score: {score}")
@@ -103,31 +119,31 @@ entry.place(
 )
 
 q1 = Label(
-    text = "Question 1",
+    text = questionTitle[0],
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
 )
 q2 = Label(
-    text = "Question 2 ([x,y])",
+    text = questionTitle[1],
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
 )
 q3 = Label(
-    text = "Question 3",
+    text = questionTitle[2],
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
 )
 q4 = Label(
-    text = "Question 4",
+    text = questionTitle[3],
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
 )
 q5 = Label(
-    text = "Question 5 (True/False)",
+    text = questionTitle[4],
     fg   = "black",
     bg   = "white",
     font = ("Arial", 24, "bold")
