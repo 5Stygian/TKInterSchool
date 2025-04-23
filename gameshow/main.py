@@ -36,9 +36,6 @@ def main():
     question = 1
     user_input = entry.get().lower().strip()
 
-    # Increment question number
-    #question += 1
-
     # Check answers based on the current question
     match question:
         case 1:
@@ -98,10 +95,10 @@ def main():
         entry.place_forget()
         button.place_forget()
 
-        if score == 5:
+        if score == 5: # if the user gets a perfect score. effectively a win state.
             win.config(bg="#3aba5c")
             winLabel.place(x = 400, y = 300)
-        else:
+        else: # if the user doesnt get a perfect score. effectively a loss state.
             win.config(bg="#c72e33")
             lossLabel.place(x = 400, y = 300)
             scoreLabel.place(x = 400, y = 250)
